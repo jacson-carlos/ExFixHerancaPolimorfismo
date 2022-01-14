@@ -15,9 +15,14 @@ namespace ExFixHerancaPolimorfismo.Entities
             CustomsFee = customsFee;
         }
 
+        public double TotalPrice()
+        {
+            return Price += CustomsFee; 
+        }
         public override string PriceTag()
         {
-            return base.PriceTag() + $" (Customs fee: {CustomsFee.ToString("F2", CultureInfo.InvariantCulture )})";
+            return  $"{Name} $ {TotalPrice().ToString("F2", CultureInfo.InvariantCulture)} (Customs fee: {CustomsFee.ToString("F2", CultureInfo.InvariantCulture )})";
         }
+
     }
 }
