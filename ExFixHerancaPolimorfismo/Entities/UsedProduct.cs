@@ -20,9 +20,9 @@ namespace ExFixHerancaPolimorfismo.Entities
         public override string PriceTag()
         {
             return Name
-                + "(used) $ "
+                + " (used) $ "
                 + Price.ToString("F2", CultureInfo.InvariantCulture)
-                + $"(Manufacture date: {ManufactureDate})";
+                + $" (Manufacture date: {ManufactureDate.ToShortDateString()})";
         }
     }
 
